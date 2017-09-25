@@ -7,7 +7,7 @@ class App extends React.Component {
     	<div>
           <h1>Welcome to RBK Students Evaluation</h1>
           <h3> Please Login first </h3>
-          <form action='/rep' method="GET">
+          <form action='/rep' method="POST">
             Enter your Information : 
             <br/>
             <input type='text' placeholder = "username" name = "username"/>
