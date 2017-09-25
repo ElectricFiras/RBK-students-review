@@ -14,5 +14,12 @@
 </form>
 <br/>
 <h3>Or would you like to choose one to torture?</h3>
+<ul>
+	<% list.forEach(function(user){ %>
+	<% if (!user.admin) { %>
+	<li> <%= user.name %> </li>
+<% } %>
+<% }) %>
+</ul>
 </body>
 </html>

@@ -24,6 +24,7 @@
   "homepage": "https://github.com/ElectricFiras/RBK-students-review#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
     "express": "^4.15.5",
     "jquery": "^3.2.1",
     "mongoose": "^4.11.13",

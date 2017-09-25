@@ -1,4 +1,5 @@
 var express = require('express');
+var router = express.Router();
 var morgan = require('morgan');
 var parser = require('body-parser');
 var mongoose = require('mongoose');
@@ -7,7 +8,8 @@ var db = require('./database/dbConfig');
 var check = require('./database/dbHelbers')
 var app = express();
 
-
+app.engine('html', require('ejs').renderFile); 
+app.set('view engine', 'html');
 app.use(express.static(__dirname + '/dist'));
 app.use(parser.urlencoded());
 app.use(morgan('dev'));
@@ -25,7 +27,7 @@ Manager.save(function(err, newPeople){
 app.get('/' , function(){
 
 })
-app.post('/rep', function (req, res) {
+app.post('/rep', function (req, res, next) {
 
 	console.log('================*************')
   var username = req.body.username;
@@ -35,7 +37,11 @@ app.post('/rep', function (req, res) {
   	if (data === undefined){
   		res.send('Wrong')
   	} else if(data.admin){
-     		res.sendFile(__dirname + '/src/Admin.html')
+  		People.find({} , function(err, data){
+  			var list = data
+  			res.render('admin.ejs', {list : list})
+  		})
+     		
      	} else {res.send('Hello User')}
      
   })
@@ -57,9 +63,10 @@ student.save(function(err, student){
 	console.log('====================================')
 
 	console.log('done')
+	res.redirect(req.get('referer'));
 })
 
-var port = 1128;
+var port = 8080;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
