@@ -9,6 +9,6 @@ and change the advices given.
 and the other side will be the student side which will only show the advices given from the adminstrator.
 
 ### technologies used for this project : 
-- for frontend I'm gonna use angulerJS
+- for frontend I'm gonna use reactJS
 - for the server side I'm gonna use Node JS along side with express
 - for data persistence I'm gonna use MongoDB
