@@ -1,7 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
-
 class App extends React.Component {
+	constructor(props){
+	  super(props)
+	}
+
   render() {
     return (
     	<div>
@@ -12,14 +15,17 @@ class App extends React.Component {
             <br/>
             <input type='text' placeholder = "username" name = "username"/>
             <input type='text' placeholder = "password"  name = "password"/>
-            <button> Submit </button>
+            <button onClick = "this.changePage()"> Submit </button>
           </form>
         </div>
     	)
   }
 }
 
+
+
 render(
   <App  /> ,
   document.getElementById('app')
 );
+
