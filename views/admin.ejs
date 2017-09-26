@@ -17,7 +17,9 @@
 <ul>
 	<% list.forEach(function(user){ %>
 	<% if (!user.admin) { %>
-	<li> <%= user.name %> </li>
+	<form action="/ff" method="POST">
+	<li> <button href="adf" name = <%= '' + user.name %> > <%= user.name %> </button> </li>
+	</form>
 <% } %>
 <% }) %>
 </ul>

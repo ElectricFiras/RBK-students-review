@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>advice</title>
+</head>
+<body>
+<h1>Please Add Your Holy Advice Your Majesty for <%= name %></h1>
+
+
+<form action= "/advice" method = "POST">
+	<textarea name = <%= name %>  
+		 placeholder = "Please Enter You Wisdom here for "
+			  rows = "15" cols="50"></textarea>
+	<br/>
+	<button>Submit Your Wisdom</button>
+</form>
+</body>
+</html>

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/fetcher');
+mongoose.connect('mongodb://ElectricFiras:201095@ds151554.mlab.com:51554/rbk_students');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
