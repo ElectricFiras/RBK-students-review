@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var People = require('./database/index');
 var db = require('./database/dbConfig');
 var check = require('./database/dbHelbers')
+var path = require('path')
 var app = express();
 
 app.engine('html', require('ejs').renderFile); 
@@ -24,6 +25,10 @@ Manager.save(function(err, newPeople){
 	if (err){
 		console.log(err)
 	}
+})
+
+app.get('/logout', function(req,res){
+	res.sendFile(path.join(__dirname + '/dist/index.html'));
 })
 app.post('/ff' , function(req, res, next){
 	var name = Object.keys(req.body)[0]
